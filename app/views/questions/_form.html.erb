@@ -1,0 +1,24 @@
+<%= form_with model: @question do |f| %>
+    <% if @question.errors.any? %>
+        <div class="">
+            <ul>
+                <% @question.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <div>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+    </div>
+    <div>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :content %><br>
+        <%= f.text_field :content %>
+    </div>
+    <%= f.submit %>
+<% end %>

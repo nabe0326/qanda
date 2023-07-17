@@ -1,0 +1,15 @@
+<h1>Questions</h1>
+<%= link_to "new" , new_question_path %>
+<% @questions.each do |q| %>
+    <div class="all">
+        Name:<br>
+        <%= q.name %><br>
+        Title:<br>
+        <%= q.title %><br>
+        Content:<br>
+        <%= q.content %><br>
+        <%= link_to "show" , question_path(q) %>
+        <%= link_to "edit" , edit_question_path(q) %>
+        <%= link_to "destroy" , question_path(q) , data: {turbo_method: "delete" , turbo_confirm: "Ary you sure?"} %>
+    </div>
+<% end %>
